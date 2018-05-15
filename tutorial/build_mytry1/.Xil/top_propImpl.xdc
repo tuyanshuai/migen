@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:/home/tys/migentutorial/build_mytry1/top.xdc rfile:../top.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
+set_property LOC H17 [get_ports user_led]
+set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
+set_property LOC E3 [get_ports clk100]
