@@ -1,0 +1,15 @@
+set_global_assignment -name SYSTEMVERILOG_FILE top.v -library work
+set_location_assignment -comment "led595_clk:0" -to led595_clk Pin_32
+set_instance_assignment -name io_standard -comment "led595_clk:0" "3.3-V LVTTL" -to led595_clk
+set_location_assignment -comment "led595_dout:0" -to led595_dout Pin_34
+set_instance_assignment -name io_standard -comment "led595_dout:0" "3.3-V LVTTL" -to led595_dout
+set_location_assignment -comment "led595_latch:0" -to led595_latch Pin_33
+set_instance_assignment -name io_standard -comment "led595_latch:0" "3.3-V LVTTL" -to led595_latch
+set_location_assignment -comment "clk:0" -to clk Pin_89
+set_instance_assignment -name io_standard -comment "clk:0" "3.3-V LVTTL" -to clk
+
+set_global_assignment -name duty_cycle 50 -section_id clk
+
+set_global_assignment -name fmax_requirement "24.0 MHz" -section_id clk
+set_global_assignment -name top_level_entity top
+set_global_assignment -name DEVICE EP4CE10E22C8N

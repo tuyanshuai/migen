@@ -1,16 +1,10 @@
-#74HC595与VGA接口复用(与V0相比，增加了PD5、PD6，修改了74HC595的引脚)
-#V1.0 CLK引脚是91，同时595三根引脚更新了
-
 	set_location_assignment PIN_89 -to clk
 	set_location_assignment PIN_23 -to rst_n
-
 	set_location_assignment PIN_32 -to led595_clk
 	set_location_assignment PIN_34 -to led595_dout
 	set_location_assignment PIN_33 -to led595_latch
-
 	set_location_assignment PIN_24 -to key_data[1]
 	set_location_assignment PIN_25 -to key_data[0]
-
 	set_location_assignment PIN_137 -to lcd_dclk	
 	set_location_assignment PIN_1   -to lcd_blank
 	set_location_assignment PIN_136 -to lcd_hs
@@ -30,11 +24,7 @@
 	set_location_assignment PIN_143 -to lcd_blue[1]
 	set_location_assignment PIN_142 -to lcd_blue[2]
 	set_location_assignment PIN_141 -to lcd_blue[3]
-	set_location_assignment PIN_138 -to lcd_blue[4]
-
-
-
-	
+	set_location_assignment PIN_138 -to lcd_blue[4]	
 	set_location_assignment PIN_51 -to sdram_clk
 	set_location_assignment PIN_50 -to sdram_cke
 	set_location_assignment PIN_64 -to sdram_cs_n
@@ -55,7 +45,6 @@
 	set_location_assignment PIN_46 -to sdram_addr[9]
 	set_location_assignment PIN_58 -to sdram_addr[10]
 	set_location_assignment PIN_49 -to sdram_addr[11]
-
 	set_location_assignment PIN_75 -to sdram_data[0]
 	set_location_assignment PIN_74 -to sdram_data[1]
 	set_location_assignment PIN_73 -to sdram_data[2]
@@ -72,9 +61,6 @@
 	set_location_assignment PIN_85 -to sdram_data[13]
 	set_location_assignment PIN_86 -to sdram_data[14]
 	set_location_assignment PIN_87 -to sdram_data[15]
-
-
-
 	set_location_assignment PIN_88 -to cmos_pclk
 	set_location_assignment PIN_115 -to cmos_sclk
 	set_location_assignment PIN_114 -to cmos_sdat
@@ -89,7 +75,6 @@
 	set_location_assignment PIN_129 -to cmos_data[2]
 	set_location_assignment PIN_132 -to cmos_data[1]
 	set_location_assignment PIN_133 -to cmos_data[0]
-
 	set_location_assignment PIN_113 -to USB_IFCLK
 	set_location_assignment PIN_112 -to USB_WR
 	set_location_assignment PIN_91 -to USB_Trigger
@@ -101,17 +86,7 @@
 	set_location_assignment PIN_104 -to USB_Data[5]
 	set_location_assignment PIN_105 -to USB_Data[6]
 	set_location_assignment PIN_106 -to USB_Data[7]
-
-
-
-
-#SDAT
 	set_location_assignment PIN_111  -to USB_PD3
-#SCLK
 	set_location_assignment PIN_110  -to USB_PD4
-#USB_Trigger
 	set_location_assignment PIN_91 -to USB_PD5	
 	set_location_assignment PIN_90 -to USB_PD6
-	
-	
-
