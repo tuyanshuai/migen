@@ -1,13 +1,18 @@
 /* Machine-generated using Migen */
 module top(
 	output led595_clk,
-	output reg led595_dout,
+	output led595_dout,
 	output led595_latch,
 	input clk
 );
 
-reg [24:0] counter = 25'd0;
-reg [7:0] Number = 8'd0;
+reg [9:0] cnt0 = 10'd0;
+wire [7:0] binval;
+reg [5:0] cnt1 = 6'd0;
+wire dout;
+reg latch = 1'd0;
+wire ledclk;
+reg [7:0] btmp = 8'd0;
 wire sys_clk;
 wire sys_rst;
 wire por_clk;
@@ -21,8 +26,12 @@ reg dummy_s;
 initial dummy_s <= 1'd0;
 // synthesis translate_on
 
-assign led595_clk = counter[22];
-assign led595_latch = counter[24];
+assign binval = 7'd64;
+assign led595_clk = ledclk;
+assign led595_dout = dout;
+assign led595_latch = latch;
+assign dout = btmp[7];
+assign ledclk = cnt1[3];
 assign sys_clk = clk;
 assign por_clk = clk;
 assign sys_rst = int_rst;
@@ -32,13 +41,20 @@ always @(posedge por_clk) begin
 end
 
 always @(posedge sys_clk) begin
-	counter <= (counter + 1'd1);
-	Number <= (Number + 1'd1);
-	led595_dout <= counter[23];
+	cnt0 <= (cnt0 + 1'd1);
+	cnt1 <= (cnt1 + 1'd1);
+	if ((cnt1 == 6'd63)) begin
+		latch <= 1'd1;
+		btmp <= binval;
+	end else begin
+		latch <= 1'd0;
+		btmp <= (btmp <<< 1'd1);
+	end
 	if (sys_rst) begin
-		led595_dout <= 1'd0;
-		counter <= 25'd0;
-		Number <= 8'd0;
+		cnt0 <= 10'd0;
+		cnt1 <= 6'd0;
+		latch <= 1'd0;
+		btmp <= 8'd0;
 	end
 end
 

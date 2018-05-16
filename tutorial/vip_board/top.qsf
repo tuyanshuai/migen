@@ -12,4 +12,4 @@ set_global_assignment -name duty_cycle 50 -section_id clk
 
 set_global_assignment -name fmax_requirement "24.0 MHz" -section_id clk
 set_global_assignment -name top_level_entity top
-set_global_assignment -name DEVICE EP4CE10E22C8N
+set_global_assignment -name DEVICE EP4CE10E22C8

@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 15 20:32:05 2018
+
+@author: tys
+"""
+
+class ShowLed(Module):
+    def __init__(self, binval):
+        
+        cnt = Signal(8)            
+        
+        self.dout = Signal() 
+        self.latch = Signal()cnt[7]
+        
+        self.sync += dout.eq(binval[cnt])
+        self.sync += cnt.eq(cnt+1)
+        
+        
+        

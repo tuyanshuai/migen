@@ -1,0 +1,109 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1b2f830 .scope module, "ParentModule" "ParentModule" 2 2;
+ .timescale 0 0;
+v0x1b64c90_0 .net "input0", 0 0, C4<z>; 0 drivers
+v0x1b64d40_0 .net "input1", 1 0, C4<zz>; 0 drivers
+v0x1b64df0_0 .net "input2", 2 0, C4<zzz>; 0 drivers
+v0x1b64ea0_0 .net "input3", 3 0, C4<zzzz>; 0 drivers
+v0x1b64f80_0 .net "output0", 0 0, v0x1b641a0_0; 1 drivers
+v0x1b65030_0 .net "output1", 1 0, v0x1b64240_0; 1 drivers
+v0x1b650b0_0 .net "output2", 2 0, v0x1b64330_0; 1 drivers
+v0x1b65160_0 .net "output3", 3 0, v0x1b643d0_0; 1 drivers
+v0x1b65210_0 .net "sys_clk", 0 0, C4<z>; 0 drivers
+v0x1b652e0_0 .net "sys_rst", 0 0, C4<z>; 0 drivers
+v0x1b653c0_0 .net "trans0", 0 0, v0x1b64970_0; 1 drivers
+v0x1b65490_0 .net "trans1", 1 0, v0x1b64a20_0; 1 drivers
+v0x1b655d0_0 .net "trans2", 2 0, v0x1b64ad0_0; 1 drivers
+v0x1b656a0_0 .net "trans3", 3 0, v0x1b64b80_0; 1 drivers
+S_0x1b644d0 .scope module, "ChildModule" "ChildModule" 2 21, 3 2, S_0x1b2f830;
+ .timescale 0 0;
+v0x1b645c0_0 .alias "input0", 0 0, v0x1b64c90_0;
+v0x1b64680_0 .alias "input1", 1 0, v0x1b64d40_0;
+v0x1b64720_0 .alias "input2", 2 0, v0x1b64df0_0;
+v0x1b647c0_0 .alias "input3", 3 0, v0x1b64ea0_0;
+v0x1b64840_0 .alias "master_clk", 0 0, v0x1b65210_0;
+v0x1b648f0_0 .alias "master_rst", 0 0, v0x1b652e0_0;
+v0x1b64970_0 .var "output0", 0 0;
+v0x1b64a20_0 .var "output1", 1 0;
+v0x1b64ad0_0 .var "output2", 2 0;
+v0x1b64b80_0 .var "output3", 3 0;
+S_0x1b2f920 .scope module, "ChildModule_1" "ChildModule" 2 34, 3 2, S_0x1b2f830;
+ .timescale 0 0;
+v0x1b502c0_0 .alias "input0", 0 0, v0x1b653c0_0;
+v0x1b63e30_0 .alias "input1", 1 0, v0x1b65490_0;
+v0x1b63ed0_0 .alias "input2", 2 0, v0x1b655d0_0;
+v0x1b63f70_0 .alias "input3", 3 0, v0x1b656a0_0;
+v0x1b64020_0 .alias "master_clk", 0 0, v0x1b65210_0;
+v0x1b640c0_0 .alias "master_rst", 0 0, v0x1b652e0_0;
+v0x1b641a0_0 .var "output0", 0 0;
+v0x1b64240_0 .var "output1", 1 0;
+v0x1b64330_0 .var "output2", 2 0;
+v0x1b643d0_0 .var "output3", 3 0;
+E_0x1b2e9c0 .event posedge, v0x1b64020_0;
+    .scope S_0x1b644d0;
+T_0 ;
+    %wait E_0x1b2e9c0;
+    %load/v 8, v0x1b645c0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1b64970_0, 0, 8;
+    %load/v 8, v0x1b64680_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v0x1b64a20_0, 0, 8;
+    %load/v 8, v0x1b64720_0, 3;
+    %ix/load 0, 3, 0;
+    %assign/v0 v0x1b64ad0_0, 0, 8;
+    %load/v 8, v0x1b647c0_0, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x1b64b80_0, 0, 8;
+    %load/v 8, v0x1b648f0_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1b64970_0, 0, 0;
+    %ix/load 0, 2, 0;
+    %assign/v0 v0x1b64a20_0, 0, 0;
+    %ix/load 0, 3, 0;
+    %assign/v0 v0x1b64ad0_0, 0, 0;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x1b64b80_0, 0, 0;
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x1b2f920;
+T_1 ;
+    %wait E_0x1b2e9c0;
+    %load/v 8, v0x1b502c0_0, 1;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1b641a0_0, 0, 8;
+    %load/v 8, v0x1b63e30_0, 2;
+    %ix/load 0, 2, 0;
+    %assign/v0 v0x1b64240_0, 0, 8;
+    %load/v 8, v0x1b63ed0_0, 3;
+    %ix/load 0, 3, 0;
+    %assign/v0 v0x1b64330_0, 0, 8;
+    %load/v 8, v0x1b63f70_0, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x1b643d0_0, 0, 8;
+    %load/v 8, v0x1b640c0_0, 1;
+    %jmp/0xz  T_1.0, 8;
+    %ix/load 0, 1, 0;
+    %assign/v0 v0x1b641a0_0, 0, 0;
+    %ix/load 0, 2, 0;
+    %assign/v0 v0x1b64240_0, 0, 0;
+    %ix/load 0, 3, 0;
+    %assign/v0 v0x1b64330_0, 0, 0;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0x1b643d0_0, 0, 0;
+T_1.0 ;
+    %jmp T_1;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "ParentModule.v";
+    "ChildModule.v";
