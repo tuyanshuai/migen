@@ -1,15 +1,7 @@
 |top
 led595_clk <= cnt1[3].DB_MAX_OUTPUT_PORT_TYPE
-led595_dout <= btmp[7].DB_MAX_OUTPUT_PORT_TYPE
+led595_dout <= <VCC>
 led595_latch <= latch.DB_MAX_OUTPUT_PORT_TYPE
-clk => btmp[0].CLK
-clk => btmp[1].CLK
-clk => btmp[2].CLK
-clk => btmp[3].CLK
-clk => btmp[4].CLK
-clk => btmp[5].CLK
-clk => btmp[6].CLK
-clk => btmp[7].CLK
 clk => latch.CLK
 clk => cnt1[0].CLK
 clk => cnt1[1].CLK

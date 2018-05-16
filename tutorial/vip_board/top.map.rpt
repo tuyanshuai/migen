@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Tue May 15 22:53:32 2018
+Tue May 15 23:04:54 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -13,13 +13,11 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +43,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 15 22:53:32 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 15 23:04:54 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; top                                         ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 12                                          ;
-;     Total combinational functions  ; 10                                          ;
-;     Dedicated logic registers      ; 10                                          ;
-; Total registers                    ; 10                                          ;
+; Total logic elements               ; 9                                           ;
+;     Total combinational functions  ; 8                                           ;
+;     Dedicated logic registers      ; 8                                           ;
+; Total registers                    ; 8                                           ;
 ; Total pins                         ; 4                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -161,8 +159,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -180,20 +177,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 12        ;
+; Estimated Total logic elements              ; 9         ;
 ;                                             ;           ;
-; Total combinational functions               ; 10        ;
+; Total combinational functions               ; 8         ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 3         ;
+;     -- 4 input functions                    ; 2         ;
 ;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 7         ;
+;     -- <=2 input functions                  ; 6         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 5         ;
+;     -- normal mode                          ; 3         ;
 ;     -- arithmetic mode                      ; 5         ;
 ;                                             ;           ;
-; Total registers                             ; 10        ;
-;     -- Dedicated logic registers            ; 10        ;
+; Total registers                             ; 8         ;
+;     -- Dedicated logic registers            ; 8         ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 4         ;
@@ -201,9 +198,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 10        ;
-; Total fan-out                               ; 57        ;
-; Average fan-out                             ; 2.04      ;
+; Maximum fan-out                             ; 8         ;
+; Total fan-out                               ; 46        ;
+; Average fan-out                             ; 1.92      ;
 +---------------------------------------------+-----------+
 
 
@@ -212,29 +209,9 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |top                       ; 10 (10)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |top                ; top         ; work         ;
+; |top                       ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |top                ; top         ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; btmp[0..5]                            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 6 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                             ;
-+---------------+---------------------------+---------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register      ;
-+---------------+---------------------------+---------------------------------------------+
-; btmp[0]       ; Stuck at GND              ; btmp[1], btmp[2], btmp[3], btmp[4], btmp[5] ;
-;               ; due to stuck port data_in ;                                             ;
-+---------------+---------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -242,7 +219,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
+; Total registers                              ; 8     ;
 ; Number of registers using Synchronous Clear  ; 6     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -257,7 +234,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; int_rst                                ; 8       ;
+; int_rst                                ; 7       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -268,19 +245,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 10                          ;
+; cycloneiii_ff         ; 8                           ;
 ;     SCLR              ; 6                           ;
-;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 10                          ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 9                           ;
 ;     arith             ; 5                           ;
 ;         2 data inputs ; 5                           ;
-;     normal            ; 5                           ;
+;     normal            ; 4                           ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 3                           ;
+;         4 data inputs ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.42                        ;
+; Average LUT depth     ; 1.33                        ;
 +-----------------------+-----------------------------+
 
 
@@ -312,24 +289,27 @@ Info: Running Quartus Prime Analysis & Synthesis
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Tue May 15 22:53:24 2018
+    Info: Processing started: Tue May 15 23:04:46 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file top.v
     Info (12023): Found entity 1: top File: /home/tys/migen/tutorial/vip_board/top.v Line: 2
 Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at top.v(12): object "dout" assigned a value but never read File: /home/tys/migen/tutorial/vip_board/top.v Line: 12
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led595_dout" is stuck at VCC File: /home/tys/migen/tutorial/vip_board/top.v Line: 4
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 13 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 997 megabytes
-    Info: Processing ended: Tue May 15 22:53:32 2018
+    Info (21061): Implemented 9 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 982 megabytes
+    Info: Processing ended: Tue May 15 23:04:54 2018
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:20
 
 

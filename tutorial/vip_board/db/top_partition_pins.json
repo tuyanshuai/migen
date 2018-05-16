@@ -8,10 +8,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "led595_dout",
-					"strict" : false
-				},
-				{
 					"name" : "led595_latch",
 					"strict" : false
 				},

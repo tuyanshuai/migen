@@ -98,8 +98,7 @@ _io = [
     ("USB_PD3", 0, Pins("111 "), IOStandard("3.3-V LVTTL")),
     ("USB_PD4", 0, Pins("110 "), IOStandard("3.3-V LVTTL")),
     ("USB_PD5", 0, Pins("91"), IOStandard("3.3-V LVTTL")),
-    ("USB_PD6", 0, Pins("90"), IOStandard("3.3-V LVTTL")),
-]
+    ("USB_PD6", 0, Pins("90"), IOStandard("3.3-V LVTTL"))]
 
 
 class Platform(AlteraPlatform):
@@ -107,7 +106,7 @@ class Platform(AlteraPlatform):
     default_clk_period = 41.666666666666664
 
     def __init__(self):
-        AlteraPlatform.__init__(self, "EP4CE10E22C8N", _io)
+        AlteraPlatform.__init__(self, "EP4CE10E22C8", _io)
 
     def create_programmer(self):
         return USBBlaster()

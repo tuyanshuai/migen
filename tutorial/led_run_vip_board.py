@@ -30,9 +30,9 @@ class LEDTop(Module):
 
         self.submodules += m2
         
-        self.comb += binval.eq(64);
+        self.comb += binval.eq(0b11111111);
         self.comb += ledclk.eq(m2.ledclk);
-        self.comb += leddout.eq(m2.dout);
+        self.comb += leddout.eq(True);# m2.dout
         self.comb += ledlatch.eq(m2.latch);
         
         
@@ -44,8 +44,9 @@ platform = vip_board.Platform()
 
 
 dut = LEDTop(platform)
-
+ 
 #print(verilog.convert(dut))
+
 platform.build(dut,build_dir="vip_board")
 
 platform.create_programmer().load_bitstream("vip_board/top.sof")

@@ -26,9 +26,9 @@ reg dummy_s;
 initial dummy_s <= 1'd0;
 // synthesis translate_on
 
-assign binval = 7'd64;
+assign binval = 8'd255;
 assign led595_clk = ledclk;
-assign led595_dout = dout;
+assign led595_dout = 1'd1;
 assign led595_latch = latch;
 assign dout = btmp[7];
 assign ledclk = cnt1[3];
